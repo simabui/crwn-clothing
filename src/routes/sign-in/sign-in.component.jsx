@@ -1,15 +1,16 @@
 import React from "react";
-import { signInWIthGooglePopup } from "../../utils/firebase/firebase";
+import { signInWIthGooglePopup, createUserDocumentFromAuth } from "../../utils/firebase/firebase";
 
 export default function SignIn() {
   async function logGoogleUser() {
     const response = await signInWIthGooglePopup();
-    console.log(response);
+
+    const userDocRef = await createUserDocumentFromAuth(response.user);
   }
 
   return (
     <>
-      <h1>sign-in.component</h1>
+      <h1>Sign In</h1>
       <button onClick={logGoogleUser}>Log In with Google</button>
     </>
   );
