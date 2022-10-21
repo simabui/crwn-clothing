@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { CategoriesContext } from "../../context/product.context";
 import CategoryPreview from "../../components/category-preview/category-preview.component";
-import "./categories-preview.styles.scss";
 
 export default function CategoriesPreview() {
   const categoriesMap = useContext(CategoriesContext);

@@ -3,7 +3,7 @@ import { signInWIthGooglePopup, createUserDocumentFromAuth, signInAuthUserWithEm
 
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button-component";
-import "./sign-in-form.scss";
+import { SignInContainer, Buttons } from "./sign-in-form.jsx";
 
 const defaultFormFields = {
   email: "",
@@ -39,7 +39,7 @@ export default function SignInForm() {
   }
 
   return (
-    <div className="sign-in-container">
+    <SignInContainer>
       <h2>Already have an account?</h2>
       <span>Sign in with email and password</span>
 
@@ -47,13 +47,13 @@ export default function SignInForm() {
         <FormInput label="Email" required type="email" onChange={handleChange} name="email" value={email} />
         <FormInput label="Password" required type="password" onChange={handleChange} name="password" value={password} />
 
-        <div className="buttons-container">
+        <Buttons>
           <Button type="submit">Sign In</Button>
           <Button type="button" buttonType="google" handleClick={signInWithGoogle}>
             Google Sign In
           </Button>
-        </div>
+        </Buttons>
       </form>
-    </div>
+    </SignInContainer>
   );
 }
