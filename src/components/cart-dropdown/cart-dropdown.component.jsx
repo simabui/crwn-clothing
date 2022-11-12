@@ -3,12 +3,11 @@ import { useNavigate } from "react-router-dom";
 import Button from "../button/button-component";
 import CartItem from "../cart-item/cart-item.component";
 import { CartContext } from "../../context/cart.context";
-import { CategoriesContext } from "../../context/product.context";
+
 import { CartDropDownContainer, EmptyMessage, CartItems } from "./cart-dropdown.styles.jsx";
 
 export default function CartDropDown() {
   const { cartItems, setIsCartOpen } = useContext(CartContext);
-  const { categoriesMap } = useContext(CategoriesContext);
 
   const navigate = useNavigate();
 
