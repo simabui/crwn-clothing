@@ -7,10 +7,12 @@ import { CategoryRouteContainer, CategoryTitle } from "./category.styles.jsx";
 
 export default function CategoryComponent() {
   const { category } = useParams();
+  console.log("render/re-rendering component");
   const categoriesMap = useSelector(selectCategoriesMap);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
+    console.log("effect fired calling");
     setProducts(categoriesMap[category]);
   }, [category, categoriesMap]);
 
