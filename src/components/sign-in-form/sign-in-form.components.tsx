@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, FormEvent, ChangeEvent } from "react";
 import { useDispatch } from "react-redux";
 
-import FormInput from "../form-input/form-input.component";
-import Button from "../button/button-component";
+import { FormInput } from "../form-input/form-input.component";
+import { Button, BUTTON_TYPE_CLASSES } from "../button/button-component";
 import { SignInContainer, Buttons } from "./sign-in-form.jsx";
 import { emailSignInStart, googleSignInStart } from "../../store/user/user.action";
 const defaultFormFields = {
@@ -15,11 +15,11 @@ export default function SignInForm() {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
-  function handleChange({ target: { name, value } }) {
+  function handleChange({ target: { name, value } }: ChangeEvent<HTMLInputElement>) {
     setFormFields({ ...formFields, [name]: value });
   }
 
-  async function handleSubmit(e) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const { email, password } = formFields;
 
@@ -48,7 +48,7 @@ export default function SignInForm() {
 
         <Buttons>
           <Button type="submit">Sign In</Button>
-          <Button type="button" buttonType="google" handleClick={signInWithGoogle}>
+          <Button type="button" buttonType={BUTTON_TYPE_CLASSES.google} handleClick={signInWithGoogle}>
             Google Sign In
           </Button>
         </Buttons>

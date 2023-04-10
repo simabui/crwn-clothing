@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, FormEvent, ChangeEvent } from "react";
 import { useDispatch } from "react-redux";
-import FormInput from "../../components/form-input/form-input.component";
-import Button from "../../components/button/button-component";
+import { FormInput } from "../form-input/form-input.component";
+import { Button } from "../button/button-component";
 import { SignUpContainer } from "./sign-up-form.jsx";
 import { signUpStart } from "../../store/user/user.action";
 
@@ -17,11 +17,11 @@ export default function SignUpForm() {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
 
-  function handleChange({ target: { name, value } }) {
+  function handleChange({ target: { name, value } }: ChangeEvent<HTMLInputElement>) {
     setFormFields({ ...formFields, [name]: value });
   }
 
-  async function handleSubmit(e) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const { email, password, confirmPassword, displayName } = formFields;
 
