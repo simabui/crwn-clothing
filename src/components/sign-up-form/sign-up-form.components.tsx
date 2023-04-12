@@ -30,8 +30,8 @@ export default function SignUpForm() {
         dispatch(signUpStart(email, password, displayName));
         setFormFields(defaultFormFields);
       } catch (e) {
-        console.error(e.message);
-        alert(e.message);
+        console.error(e);
+        alert(e);
       }
     }
   }

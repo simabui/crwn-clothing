@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
 import CartIcon from "../../components/cart-icon/cart-icon.component";
 import CartDropDown from "../../components/cart-dropdown/cart-dropdown.component";
-import { NavagationContaner, NavLinkContainer, NavLink, LogoContainer } from "./navigation.styles.jsx";
+import { NavagationContaner, NavLinkContainer, NavLink, LogoContainer } from "./navigation.styles";
 import { selectCurrentUser } from "../../store/user/user.select";
 import { selectIsCartOpen } from "../../store/cart/cart.selector";
 import { signOutStart } from "../../store/user/user.action";
