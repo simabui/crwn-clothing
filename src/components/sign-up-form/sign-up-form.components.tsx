@@ -2,7 +2,7 @@ import React, { useState, FormEvent, ChangeEvent } from "react";
 import { useDispatch } from "react-redux";
 import { FormInput } from "../form-input/form-input.component";
 import { Button } from "../button/button-component";
-import { SignUpContainer } from "./sign-up-form.jsx";
+import { SignUpContainer } from "./sign-up-form";
 import { signUpStart } from "../../store/user/user.action";
 
 const defaultFormFields = {

@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../button/button-component";
+import { Button } from "../button/button-component";
 import { useDispatch, useSelector } from "react-redux";
 
 import { selectCartItems } from "../../store/cart/cart.selector";

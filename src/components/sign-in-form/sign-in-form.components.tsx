@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 
 import { FormInput } from "../form-input/form-input.component";
 import { Button, BUTTON_TYPE_CLASSES } from "../button/button-component";
-import { SignInContainer, Buttons } from "./sign-in-form.jsx";
+import { SignInContainer, Buttons } from "./sign-in-form";
 import { emailSignInStart, googleSignInStart } from "../../store/user/user.action";
 const defaultFormFields = {
   email: "",
