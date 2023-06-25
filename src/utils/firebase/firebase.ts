@@ -56,6 +56,8 @@ export const getCategoriesAndDocuments = async (): Promise<Category[]> => {
   const q = query(collectionRef);
 
   const querySnapshot = await getDocs(q);
+  console.log({ querySnapshot: querySnapshot.docs.map((docsSnapshot) => docsSnapshot.data() as Category) });
+
   return querySnapshot.docs.map((docsSnapshot) => docsSnapshot.data() as Category);
 };
 
